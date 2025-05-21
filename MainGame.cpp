@@ -16,11 +16,25 @@ void MainGame::run()
 	height = 600;
 	gameState = GameState::PLAY;
 	init();
+
+	float offset = 0.5f;
+
+	// Esquina superior izquierda
 	sprites.push_back(new Sprite());
-	sprites.back()->init(-1, -1, 1, 1, "Images/lock.png");
+	sprites.back()->init(-1 + offset, 1 - offset, 1, 1, "Images/Link4.png");
+
+	// Esquina superior derecha
 	sprites.push_back(new Sprite());
-	sprites.back()->init(0, -1, 1, 1, "Images/lock.png");
-	//sprite.init(-1, -1, 1, 1,"Images/lock.png");
+	sprites.back()->init(1 - offset, 1 - offset, 1, 1, "Images/Link4.png");
+
+	// Esquina inferior izquierda
+	sprites.push_back(new Sprite());
+	sprites.back()->init(-1 + offset, -1 + offset, 1, 1, "Images/Link4.png");
+
+	// Esquina inferior derecha
+	sprites.push_back(new Sprite());
+	sprites.back()->init(1 - offset, -1 + offset, 1, 1, "Images/Link4.png");
+
 	update();
 }
 
